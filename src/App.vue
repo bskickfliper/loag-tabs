@@ -49,7 +49,7 @@ export default {
     // Use the onMounted hook to fetch data when the component is mounted
     onMounted(async () => {
       try {
-        const response = await fetch('/src/assets/rawunits.json');
+        const response = await fetch('/public/rawunits.json');
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
@@ -110,12 +110,8 @@ export default {
     </h1>
 
     <section class="factions-container">
-      <button
-        v-for="(faction, factionName) in factions"
-        :key="factionName"
-        @click="toggleFaction(factionName)"
-        :class="[{ active: selectedFactionName === factionName }, { disabled: isLoading }]"
-      >
+      <button v-for="(faction, factionName) in factions" :key="factionName" @click="toggleFaction(factionName)"
+        :class="[{ active: selectedFactionName === factionName }, { disabled: isLoading }]">
         {{ factionName }}
       </button>
     </section>
@@ -130,7 +126,8 @@ export default {
           <div class="text-info">{{ unit.name }} ({{ unit.cost }})</div>
           <div class="change-amount">
             <button class="mini" @click="addUnit(unit, -1)">-</button>
-            <input type="number" name="amount" :value="unitAmountVModel[unit.name]" @input="unitAmountVModel[unit.name] = $event.target.value" min="1" />
+            <input type="number" name="amount" :value="unitAmountVModel[unit.name]"
+              @input="unitAmountVModel[unit.name] = $event.target.value" min="1" />
             <button class="mini" @click="addUnit(unit, 1)">+</button>
           </div>
         </div>
@@ -144,7 +141,8 @@ export default {
               <span v-if="factions[factionName] && factions[factionName].units[unitName]">
                 (<span class="total-cost">{{ amount * factions[factionName].units[unitName].cost }}</span>)
               </span>
-              <button class="mini remove-button" @click="removeUnit(factionName, unitName)" title="Remove unit(s)">X</button>
+              <button class="mini remove-button" @click="removeUnit(factionName, unitName)"
+                title="Remove unit(s)">X</button>
             </dd>
           </dl>
         </div>
@@ -153,7 +151,7 @@ export default {
             <dt>Total Cost</dt>
             <dd class="total-cost">{{ totalCost }}</dd>
           </dl>
-          </div>
+        </div>
       </div>
     </div>
   </div>
