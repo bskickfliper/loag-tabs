@@ -1,0 +1,322 @@
+{
+  "Tribal": {
+    "units": {
+      "Clubber": {
+        "name": "Clubber",
+        "cost": 70
+      },
+      "Protector": {
+        "name": "Protector",
+        "cost": 80
+      },
+      "Spear Thrower": {
+        "name": "Spear Thrower",
+        "cost": 120
+      },
+      "Stoner": {
+        "name": "Stoner",
+        "cost": 160
+      },
+      "Bone Mage": {
+        "name": "Bone Mage",
+        "cost": 300
+      },
+      "Chieftain": {
+        "name": "Chieftain",
+        "cost": 400
+      },
+      "Mammoth": {
+        "name": "Mammoth",
+        "cost": 2200
+      }
+    }
+  },
+  "Farmer": {
+    "units": {
+      "Halfling": {
+        "name": "Halfling",
+        "cost": 50
+      },
+      "Farmer": {
+        "name": "Farmer",
+        "cost": 80
+      },
+      "Hay Baler": {
+        "name": "Hay Baler",
+        "cost": 140
+      },
+      "Potionseller": {
+        "name": "Potionseller",
+        "cost": 340
+      },
+      "Harvester": {
+        "name": "Harvester",
+        "cost": 500
+      },
+      "Wheelbarrow": {
+        "name": "Wheelbarrow",
+        "cost": 1000
+      },
+      "Scarecrow": {
+        "name": "Scarecrow",
+        "cost": 1200
+      }
+    }
+  },
+  "Medieval": {
+    "units": {
+      "Bard": {
+        "name": "Bard",
+        "cost": 60
+      },
+      "Squire": {
+        "name": "Squire",
+        "cost": 100
+      },
+      "Archer": {
+        "name": "Archer",
+        "cost": 140
+      },
+      "Healer": {
+        "name": "Healer",
+        "cost": 180
+      },
+      "Knight": {
+        "name": "Knight",
+        "cost": 650
+      },
+      "Catapult": {
+        "name": "Catapult",
+        "cost": 1000
+      },
+      "The King": {
+        "name": "The King",
+        "cost": 1500
+      }
+    }
+  },
+  "Ancient": {
+    "units": {
+      "Shield Bearer": {
+        "name": "Shield Bearer",
+        "cost": 100
+      },
+      "Sarissa": {
+        "name": "Sarissa",
+        "cost": 120
+      },
+      "Hoplite": {
+        "name": "Hoplite",
+        "cost": 180
+      },
+      "Snake Archer": {
+        "name": "Snake Archer",
+        "cost": 300
+      },
+      "Ballista": {
+        "name": "Ballista",
+        "cost": 900
+      },
+      "Minotaur": {
+        "name": "Minotaur",
+        "cost": 1600
+      },
+      "Zeus": {
+        "name": "Zeus",
+        "cost": 2000
+      }
+    }
+  },
+  "Viking": {
+    "units": {
+      "Headbutter": {
+        "name": "Headbutter",
+        "cost": 90
+      },
+      "Ice Archer": {
+        "name": "Ice Archer",
+        "cost": 160
+      },
+      "Brawler": {
+        "name": "Brawler",
+        "cost": 220
+      },
+      "Berserker": {
+        "name": "Berserker",
+        "cost": 250
+      },
+      "Valkyrie": {
+        "name": "Valkyrie",
+        "cost": 500
+      },
+      "Longship": {
+        "name": "Longship",
+        "cost": 1000
+      },
+      "Jarl": {
+        "name": "Jarl",
+        "cost": 1500
+      }
+    }
+  },
+  "Dynasty": {
+    "units": {
+      "Samurai": {
+        "name": "Samurai",
+        "cost": 140
+      },
+      "Firework Archer": {
+        "name": "Firework Archer",
+        "cost": 180
+      },
+      "Monk": {
+        "name": "Monk",
+        "cost": 250
+      },
+      "Ninja": {
+        "name": "Ninja",
+        "cost": 500
+      },
+      "Dragon": {
+        "name": "Dragon",
+        "cost": 1000
+      },
+      "Hwacha": {
+        "name": "Hwacha",
+        "cost": 1500
+      },
+      "Monkey King": {
+        "name": "Monkey King",
+        "cost": 2000
+      }
+    }
+  },
+  "Renaissance": {
+    "units": {
+      "Painter": {
+        "name": "Painter",
+        "cost": 50
+      },
+      "Fencer": {
+        "name": "Fencer",
+        "cost": 150
+      },
+      "Balloon Archer": {
+        "name": "Balloon Archer",
+        "cost": 200
+      },
+      "Musketeer": {
+        "name": "Musketeer",
+        "cost": 250
+      },
+      "Halberd": {
+        "name": "Halberd",
+        "cost": 400
+      },
+      "Jouster": {
+        "name": "Jouster",
+        "cost": 1000
+      },
+      "Da Vinci Tank": {
+        "name": "Da Vinci Tank",
+        "cost": 4000
+      }
+    }
+  },
+  "Pirate": {
+    "units": {
+      "Flintlock": {
+        "name": "Flintlock",
+        "cost": 100
+      },
+      "Blunderbuss": {
+        "name": "Blunderbuss",
+        "cost": 160
+      },
+      "Bomb Thrower": {
+        "name": "Bomb Thrower",
+        "cost": 250
+      },
+      "Harpooner": {
+        "name": "Harpooner",
+        "cost": 300
+      },
+      "Cannon": {
+        "name": "Cannon",
+        "cost": 1000
+      },
+      "Captain": {
+        "name": "Captain",
+        "cost": 1500
+      },
+      "Pirate Queen": {
+        "name": "Pirate Queen",
+        "cost": 2500
+      }
+    }
+  },
+  "Spooky": {
+    "units": {
+      "Skeleton Warrior": {
+        "name": "Skeleton Warrior",
+        "cost": 80
+      },
+      "Skeleton Archer": {
+        "name": "Skeleton Archer",
+        "cost": 180
+      },
+      "Candlehead": {
+        "name": "Candlehead",
+        "cost": 200
+      },
+      "Vampire": {
+        "name": "Vampire",
+        "cost": 200
+      },
+      "Pumpkin Catapult": {
+        "name": "Pumpkin Catapult",
+        "cost": 1000
+      },
+      "Swordcaster": {
+        "name": "Swordcaster",
+        "cost": 1000
+      },
+      "Reaper": {
+        "name": "Reaper",
+        "cost": 2500
+      }
+    }
+  },
+  "Wild west": {
+    "units": {
+      "Dynamite Thrower": {
+        "name": "Dynamite Thrower",
+        "cost": 100
+      },
+      "Miner": {
+        "name": "Miner",
+        "cost": 200
+      },
+      "Cactus": {
+        "name": "Cactus",
+        "cost": 400
+      },
+      "Gunslinger": {
+        "name": "Gunslinger",
+        "cost": 650
+      },
+      "Lasso": {
+        "name": "Lasso",
+        "cost": 740
+      },
+      "Deadeye": {
+        "name": "Deadeye",
+        "cost": 900
+      },
+      "Quick Draw": {
+        "name": "Quick Draw",
+        "cost": 1200
+      }
+    }
+  }
+}
