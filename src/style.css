@@ -648,31 +648,28 @@ h1 {
   }
 }
 
+dl {
+  display: flex;
+  flex-direction: column;
+}
+
+dt {
+  padding: 2px 4px;
+  background: #333;
+  color: #fff;
+  text-transform: uppercase;
+  margin-top: 8px;
+}
+
+dd {
+  margin: 0;
+  padding: 4px;
+  padding-left: 12px;
+}
+
 .units-summary {
   display: flex;
   flex-direction: column;
-
-  dl {
-    display: flex;
-    flex-direction: column;
-  }
-
-  dt {
-    padding: 2px 4px;
-    background: #333;
-    color: #fff;
-  }
-
-  dd {
-    margin: 0;
-    padding: 4px;
-    padding-left: 12px;
-  }
-
-  dt {
-    text-transform: uppercase;
-    margin-top: 8px;
-  }
 
   .summary {
     flex-grow: 1;
