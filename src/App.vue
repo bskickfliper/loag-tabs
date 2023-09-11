@@ -49,7 +49,7 @@ export default {
     // Use the onMounted hook to fetch data when the component is mounted
     onMounted(async () => {
       try {
-        const response = await fetch('/public/rawunits.json');
+        const response = await fetch('rawunits.json');
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
