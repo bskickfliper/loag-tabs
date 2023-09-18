@@ -9,6 +9,7 @@ export default {
     const isLoading = ref(true);
     const defaultAmount = ref(1); // Default amount
     const amount = ref(defaultAmount.value);
+    const maxAmount = 10000;
 
     // Store unit amounts by faction
     const factionUnitAmounts = reactive({});
@@ -85,6 +86,24 @@ export default {
       },
     });
 
+    const exportArmy = () => {
+      const armyConfig = {
+        factionUnitAmounts: factionUnitAmounts || null
+      };
+      const json = JSON.stringify(armyConfig);
+
+      // Create a data URI and trigger a download
+      const blob = new Blob([json], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.style.display = 'none';
+      a.href = url;
+      a.download = 'army-config.json';
+      document.body.appendChild(a);
+      a.click();
+      window.URL.revokeObjectURL(url);
+    };
+
     return {
       factions,
       selectedFactionName,
@@ -93,11 +112,13 @@ export default {
       defaultAmount,
       amount,
       factionUnitAmounts,
-      toggleFaction,
-      addUnit,
-      removeUnit,
       totalCost,
       unitAmountVModel,
+      maxAmount,
+      toggleFaction,
+      exportArmy,
+      addUnit,
+      removeUnit
     };
   },
 };
@@ -105,9 +126,20 @@ export default {
 
 <template>
   <div>
-    <h1>
-      LOAG<br />TABS Army calculator
+    <h1><div id="face">
+	<div class="left eye">
+		<div class="pupil"></div>
+	</div>
+	<div class="right eye">
+		<div class="pupil"></div>
+	</div>
+</div><br />
+      LOAG <br />TABS Army calculator
     </h1>
+    <p class="howto">Use the buttons below to create an army with a maximum total cost of {{ maxAmount }}.
+      <br />Click the <button class="mini" :disabled="totalCost > maxAmount" @click="exportArmy">Export Army</button> button, download the file, send it to Chris.eu
+    <br/>
+  If you have any specific requests for the army layout, let Chris know.</p>
 
     <section class="factions-container">
       <button v-for="(faction, factionName) in factions" :key="factionName" @click="toggleFaction(factionName)"
@@ -126,9 +158,9 @@ export default {
           <div class="text-info">{{ unit.name }} ({{ unit.cost }})</div>
           <div class="change-amount">
             <button class="mini" @click="addUnit(unit, -1)">-</button>
-            <input type="number" name="amount" :value="unitAmountVModel[unit.name]"
+            <input type="text" name="amount" :value="unitAmountVModel[unit.name]"
               @input="unitAmountVModel[unit.name] = $event.target.value" min="1" />
-            <button class="mini" @click="addUnit(unit, 1)">+</button>
+            <button class="mini" @click="addUnit(unit, 1)" :disabled="totalCost >= maxAmount || totalCost + unit.cost > maxAmount">+</button>
           </div>
         </div>
       </div>
@@ -149,11 +181,13 @@ export default {
         <div class="total">
           <dl>
             <dt>Total Cost</dt>
-            <dd class="total-cost">{{ totalCost }}</dd>
+            <dd class="total-cost"><span :class="[{'warning': totalCost > maxAmount}]">{{ totalCost }}</span>/{{ maxAmount }}</dd>
           </dl>
         </div>
       </div>
     </div>
   </div>
+  <div class="export-container">
+    <button :disabled="totalCost > maxAmount" @click="exportArmy">Export Army</button>
+  </div>
 </template>
-

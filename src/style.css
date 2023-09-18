@@ -31,6 +31,15 @@ html {
   /* 2 */
 }
 
+html {
+  box-sizing:border-box;
+}
+*,
+:after,
+:before {
+  box-sizing:inherit
+}
+
 /* Sections
    ========================================================================== */
 
@@ -562,7 +571,7 @@ body {
 
 h1 {
   font-size: 3.2em;
-  line-height: 1.1;
+  line-height: 1;
 }
 
 .buttons-container .unit {
@@ -572,7 +581,8 @@ h1 {
   margin-bottom: 1rem;
 }
 
-.change-amount, input {
+.change-amount,
+input {
   background-color: #1a1a1a;
 }
 
@@ -590,18 +600,20 @@ button {
   font-family: inherit;
   background-color: #1a1a1a;
   transition: border-color 0.25s;
-  
+
   &.mini {
     padding: 0.1em 0.4em;
   }
 
   &:hover {
-    cursor: pointer;    
+    cursor: pointer;
     border-color: #646cff;
   }
 
-  &.disabled {
+  &.disabled,
+  &[disabled] {
     color: grey;
+
     &:hover {
       cursor: unset;
       border-color: transparent;
@@ -622,12 +634,30 @@ h1 {
   font-weight: 900;
   font-size: 5rem;
   text-align: center;
+  margin-bottom: 10px;
+}
+
+
+.warning {
+  color: red;
+}
+
+.export-container {
+  margin-top: 10px;
+  text-align: right;
+}
+
+.howto {
+  padding: 10px 0;
+  line-height: 1.2;
+  text-align: center;
 }
 
 .info-summary {
   display: flex;
   justify-content: space-between;
   margin-top: 8px;
+  gap: 5px;
 }
 
 .units-summary,
@@ -635,7 +665,7 @@ h1 {
   border: 1px white solid;
   border-radius: 8px;
   padding: 16px;
-  width: 45%;
+  width: 50%;
 }
 
 .total {
@@ -670,6 +700,7 @@ dd {
 .units-summary {
   display: flex;
   flex-direction: column;
+  gap: 5px;
 
   .summary {
     flex-grow: 1;
@@ -686,6 +717,9 @@ dd {
 .factions-container {
   margin-top: 8px;
   display: flex;
+  flex-wrap: wrap;
+  column-gap: 2px;
+  row-gap: 5px;
 }
 
 .card {
@@ -693,9 +727,8 @@ dd {
 }
 
 #app {
-  max-width: 1280px;
+  max-width: 98vw;
   margin: 0 auto;
-  padding: 2rem;
 }
 
 .hourglass {
@@ -746,5 +779,64 @@ dd {
 
   button {
     background-color: #f9f9f9;
+  }
+}
+
+div#face {
+	width: 50px;
+	height: 50px;
+	margin: 0 auto;
+	position: relative;
+	background: transparent;
+  margin-top: 2rem;
+  display: inline-block;
+}
+div#face, div#face * { 
+	border-radius: 50%;
+}
+.eye {
+	width: 25%;
+	height: 25%;
+	background: #fff;
+	position: absolute;
+	top: 50%;
+}
+.left.eye { left: 20%; }
+.right.eye { right: 20%; }
+.pupil { 
+	background: #000;
+	width: 50%;
+	height: 50%;
+	position: relative;
+	left: 25%;
+	transform-origin: bottom;
+  animation: move 3s ease infinite;
+}
+
+@-webkit-keyframes move {
+  50% {
+    transform: translate(2px, 7px);
+  }
+  75% {
+    transform: translate(-4px, 7px)
+  }
+}
+
+@media screen and (max-width: 767px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  .howto {
+    text-align: left;
+  }
+
+  .info-summary {
+    flex-direction: column;
+  }
+
+  .units-summary,
+  .units-container {
+    width: 100%;
   }
 }
